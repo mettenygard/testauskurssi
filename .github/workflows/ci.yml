@@ -18,5 +18,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
+    - name: Run tests and send coverage to Coveralls
       run: npm test
+      env: COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
