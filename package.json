@@ -9,7 +9,7 @@
     "url": "https://github.com/mettenygard/testauskurssi"
   },
   "scripts": {
-    "test": "jest --coverage --coverageReporters=text-lcov --coverageDirectory=coverage && cat ./coverage/lcov.info | coveralls",
+     "test": "npx jest --coverage --coverageReporters=text-lcov --coverageDirectory=coverage",
     "test-coverage": "npm run test"
   },
   "author": "",
