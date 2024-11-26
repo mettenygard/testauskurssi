@@ -21,12 +21,16 @@ jobs:
     - name: Run tests and send coverage to Coveralls
       run: |
         npm run test-coverage  # Runs the test coverage using npm
-      env: 
+      env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
     - name: Check if lcov.info exists
       run: |
         ls -l ./coverage  # This will list the contents of the coverage folder to debug
 
-    - name: Coveralls
+    - name: Upload coverage to Coveralls
       uses: coverallsapp/github-action@v2
+      with:
+        path-to-lcov: ./coverage/lcov.info  # Explicitly specify the path to lcov.info
+      env:
+        COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
