@@ -11,7 +11,8 @@
   "scripts": {
   "test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
   "test-coverage": "npm run test"
-},
+}
+,
   "author": "",
   "license": "MIT",
   "devDependencies": {

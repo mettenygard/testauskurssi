@@ -20,8 +20,7 @@ jobs:
 
     - name: Run tests and send coverage to Coveralls
       run: |
-        npm install
-        make test-coverage
+        npm run test-coverage  # Runs the test coverage using npm
       env: 
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
