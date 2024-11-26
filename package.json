@@ -5,14 +5,13 @@
   "main": "index.js",
   "type": "module",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/mettenygard/testauskurssi"
-},
+    "type": "git",
+    "url": "https://github.com/mettenygard/testauskurssi"
+  },
   "scripts": {
-  "test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-  "test-coverage": "npm run test"
-}
-,
+    "test": "jest --coverage --coverageReporters=text-lcov --coverageDirectory=coverage && cat ./coverage/lcov.info | coveralls",
+    "test-coverage": "npm run test"
+  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
