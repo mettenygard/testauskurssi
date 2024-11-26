@@ -1,12 +1,17 @@
 {
   "name": "software-testing-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "A software testing assignment project.",
   "main": "index.js",
   "type": "module",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/mettenygard/testauskurssi"
+},
   "scripts": {
-    "test": "jest --coverage && cat ./coverage/lcov.info | coveralls"
-  },
+  "test": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+  "test-coverage": "npm run test"
+},
   "author": "",
   "license": "MIT",
   "devDependencies": {
