@@ -1,12 +1,13 @@
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
-    "src/**/*.{js,jsx,ts,tsx}",
-    "tests/**/*.{js,jsx,ts,tsx}" // Adjust if needed
+    "src/**/*.{js,jsx,ts,tsx}",  // Include source files for coverage
+    "tests/**/*.{js,jsx,ts,tsx}" // Include test files for coverage, adjust if needed
   ],
-  coverageReporters: ["lcov", "text"],
+  coverageReporters: ["lcov", "text"],  // Coverage report formats
   testMatch: [
-    "**/tests/**/*.test.js",    // This matches any .test.js files in the tests folder
-    "**/tests/**/*.spec.js"     // This matches any .spec.js files in the tests folder
-  ]
+    "**/tests/**/*.test.js",   // Matches .test.js files in the tests folder
+    "**/tests/**/*.spec.js"    // Matches .spec.js files in the tests folder
+  ],
+  coverageDirectory: "coverage", // Ensure coverage is stored in the "coverage" directory
 };
