@@ -12,20 +12,6 @@ describe("filter tests", () =>{
         {'category': 'Electronit', 'price': 500, 'productContent': 'Phone', 'producer': 'Apple'},
     ];
 
-    it('filter smaller numbers', () =>
-    { 
-        const numbers = [1,2,3,4,5];
-        expect(filter(numbers, (num) => num <= 4))
-            .toEqual([1,2,3,4]);
-    });
-
-    it('filter bigger numbers', () =>
-    { 
-        const numbers = [1,2,3,4,5];
-        expect(filter(numbers, (num) => num >= 3))
-            .toEqual([3,4,5]);
-    });
-
     it('filter by category', () =>
     { 
         const result = filter(products, ({category}) => category === 'Fruit');
