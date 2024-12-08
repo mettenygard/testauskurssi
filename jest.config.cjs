@@ -10,4 +10,5 @@ module.exports = {
     "**/tests/**/*.spec.js"    // Matches .spec.js files in the tests folder
   ],
   coverageDirectory: "coverage", // Ensure coverage is stored in the "coverage" directory
+  transform: { '^.+\\.js$': 'babel-jest', }
 };
