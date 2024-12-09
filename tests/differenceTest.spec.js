@@ -98,4 +98,18 @@ describe("difference tests", () =>{
 
         expect(difference(array,array2)).toEqual([null, 0, undefined, 'string']);
     });
+
+    it('Different data types, different array values', () =>{
+        const array = [null, 0, undefined, 'string'];
+        const array2 = [false,2,3,'testi'];
+
+        expect(difference(array,array2)).toEqual([null, 0, undefined, 'string']);
+    });
+
+    it('data is not array', () =>{
+
+        expect(difference('string','string')).toEqual([]);
+        expect(difference('string','notstring')).toEqual([]);
+    });
+
 });
