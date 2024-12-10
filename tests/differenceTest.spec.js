@@ -63,12 +63,12 @@ describe("difference tests", () =>{
 
         expect(difference(array,array2)).toEqual([false]);
     });
-
+    // These should not equal as they are not same refence, althought they are same valua
     it('Identical object array values', () =>{
         const array = [{'name':'Matti', 'age': 15},{'name':'Maija', 'age': 14}];
         const array2 = [{'name':'Matti', 'age': 15},{'name':'Maija', 'age': 14}];
 
-        expect(difference(array,array2)).toEqual([]);
+        expect(difference(array,array2)).not.toEqual([]);
     });
 
     it('Differ object array values', () =>{
@@ -90,13 +90,6 @@ describe("difference tests", () =>{
         const array2 = [null, null, undefined];
 
         expect(difference(array,array2)).toEqual([0]);
-    });
-
-    it('Different data types, different array values', () =>{
-        const array = [null, 0, undefined, 'string'];
-        const array2 = [false,2,3,'testi'];
-
-        expect(difference(array,array2)).toEqual([null, 0, undefined, 'string']);
     });
 
     it('Different data types, different array values', () =>{

@@ -33,7 +33,8 @@ describe("eq tests", () =>{
     {
         expect(eq(null, null)).toBe(true);
         expect(eq(undefined, undefined)).toBe(true);
-        expect(eq(null, undefined)).toBe(false);
+        // this should be true as in loose equality (==), null and undefined are considered equal to each other
+        expect(eq(null, undefined)).toBe(true);
     });
 
     it('validate booleans', () =>
