@@ -30,4 +30,8 @@ describe("ceil tests", () =>{
     it("round decimal to 9.99 decimal", () =>{
         expect(ceil(9.9877,2)).toBe(9.99);
     })
+
+    it("precice null", () =>{
+        expect(ceil(10.545, null)).toBe(11);  
+    })
 });
