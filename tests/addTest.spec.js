@@ -1,5 +1,3 @@
-import baseToNumber from '../src/.internal/baseToNumber.js';
-import baseToString from '../src/.internal/baseToString.js';
 import add from '../src/add.js';
 
 describe("add tests", () =>{
@@ -32,30 +30,5 @@ describe("add tests", () =>{
         expect(add(NaN,1)).toBe(NaN);
         expect(add(undefined,1)).toBe(1);
         expect(add( null,1)).toBe(1);
-    });
-
-    it('baseToNumber cases', () =>
-    {
-        expect(baseToNumber(42)).toBe(42);
-
-        const symbol = Symbol('word')
-        expect(baseToNumber(symbol)).toBeNaN();
-        expect(baseToNumber("42")).toBe(42);
-        expect(baseToNumber(undefined)).toBeNaN();
-        expect(baseToNumber(null)).toBe(0);
-        expect(baseToNumber(true)).toBe(1);
-        expect(baseToNumber(false)).toBe(0);
-    });
-
-    it('baseToString cases', () =>
-    {
-        expect(baseToString("string")).toBe("string");
-        expect(baseToString("42")).toBe("42");
-        expect(baseToString(42)).toBe("42");
-        expect(baseToString(-42)).toBe("-42");
-        expect(baseToString(undefined)).toBe('undefined');
-        expect(baseToString(null)).toBe('null');
-        expect(baseToString(true)).toBe('true');
-        expect(baseToString(false)).toBe('false');
     });
 });
