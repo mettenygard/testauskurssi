@@ -22,3 +22,5 @@ function isBoolean(value) {
 }
 
 export default isBoolean
+
+
