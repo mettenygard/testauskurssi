@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "jest",
-    "test-coverage": "c8 jest",
+    "test-coverage": "rmdir /s /q coverage && c8 jest",
     "coverage-report": "c8 report --reporter=lcov",
     "send-to-coveralls": "cat coverage/lcov.info | coveralls"
   },
