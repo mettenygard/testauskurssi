@@ -17,6 +17,5 @@ describe("count by tests", () =>{
         ];
         expect(countBy(products, value => value.product))
             .toEqual({'Computer': 3, 'Keyboard': 1, 'Mouse': 1, 'Paper': 1, 'Phone': 3 })
-
     });
 });

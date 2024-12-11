@@ -53,4 +53,56 @@ describe("eq tests", () =>{
         expect(eq(NaN, null)).toBe(false);
         expect(eq(NaN, 0)).toBe(false);
     });
+
+    it('validate list', () => {
+        const list = [1,2,3];
+        const list2 = [2,3,4];
+
+        expect(eq(list,list)).toBe(true);
+        expect(eq(list,list2)).toBe(false);
+    })
+
+    it('validate object and list retun false', () =>{
+        const list = [100];
+        const object = Object(100);
+
+        expect(eq(object, list)).toBe(false);
+
+    });
+
+    it('validate string and number retun false', () =>{
+        const string = '100';
+        const number = 100;
+
+        expect(eq(string, number)).toBe(false);
+    });
+
+    it('validate string and list retun false', () =>{
+        const string = '100';
+        const list = [100];
+
+        expect(eq(string, list)).toBe(false);
+    });
+
+    it('validate string and object retun false', () =>{
+        const string = '100';
+        const object = Object(100);
+
+        expect(eq(string, object)).toBe(false);
+    });
+
+    it('validate list and number retun false', () =>{
+        const number = 100;
+        const list = [100];
+
+        expect(eq(list, number)).toBe(false);
+    });
+
+    it('validate object and number retun false', () =>{
+        const number = 100;
+        const object = Object(100);
+
+        expect(eq(object, number)).toBe(false);
+    });
+
 });
