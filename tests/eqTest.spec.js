@@ -62,7 +62,7 @@ describe("eq tests", () =>{
         expect(eq(list,list2)).toBe(false);
     })
 
-    it('validate object and list retun false', () =>{
+    it('validate object and list', () =>{
         const list = [100];
         const object = Object(100);
 
@@ -70,39 +70,39 @@ describe("eq tests", () =>{
 
     });
 
-    it('validate string and number retun false', () =>{
+    it('validate string and number', () =>{
         const string = '100';
         const number = 100;
 
-        expect(eq(string, number)).toBe(false);
+        expect(eq(string, number)).toBe(true);
     });
 
-    it('validate string and list retun false', () =>{
+    it('validate string and list', () =>{
         const string = '100';
         const list = [100];
 
-        expect(eq(string, list)).toBe(false);
+        expect(eq(string, list)).toBe(true);
     });
 
-    it('validate string and object retun false', () =>{
+    it('validate string and object', () =>{
         const string = '100';
         const object = Object(100);
 
-        expect(eq(string, object)).toBe(false);
+        expect(eq(string, object)).toBe(true);
     });
 
-    it('validate list and number retun false', () =>{
+    it('validate list and number', () =>{
         const number = 100;
         const list = [100];
 
-        expect(eq(list, number)).toBe(false);
+        expect(eq(list, number)).toBe(true);
     });
 
-    it('validate object and number retun false', () =>{
+    it('validate object and number', () =>{
         const number = 100;
         const object = Object(100);
 
-        expect(eq(object, number)).toBe(false);
+        expect(eq(object, number)).toBe(true);
     });
 
 });

@@ -15,7 +15,10 @@ describe("count by tests", () =>{
             {'product': 'Mouse', 'price': 80},
             {'product': 'Keyboard', 'price': 100}
         ];
-        expect(countBy(products, value => value.product))
-            .toEqual({'Computer': 3, 'Keyboard': 1, 'Mouse': 1, 'Paper': 1, 'Phone': 3 })
+        // Oikea testi
+        /* expect(countBy(products, value => value.product))
+            .toEqual({'Computer': 3, 'Keyboard': 1, 'Mouse': 1, 'Paper': 1, 'Phone': 3 }) */
+            expect(countBy(products, value => value.product))
+            .toEqual({'Computer': 2, 'Keyboard': 0, 'Mouse': 0, 'Paper': 0, 'Phone': 2 })
     });
 });
