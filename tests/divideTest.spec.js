@@ -1,8 +1,7 @@
 import divide from "../src/divide";
 
-describe("divide tests", () =>{
-/*     it('Divide even numbers', () =>{
-
+describe("divide tests", () =>{     
+    it('Divide even numbers', () =>{
         expect(divide(10,5)).toBe(2);
         expect(divide(10,-5)).toBe(-2);
         expect(divide(-10,-5)).toBe(2);
@@ -23,7 +22,7 @@ describe("divide tests", () =>{
         expect(divide(6,0)).toBe(Infinity);
         expect(divide(-6,0)).toBe(-Infinity);
         expect(divide(0,0)).toBe(NaN);
-    }); */
+    });
 
     it('Non numeric', () =>{
         expect(divide('a',0)).toBe(NaN);

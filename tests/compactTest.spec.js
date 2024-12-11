@@ -1,7 +1,7 @@
 import compact from "../src/compact";
 
 describe("compact tests", () =>{
-/*     it('return all', () => {
+    it('return all', () => {
         const array = [1,2,3,4];
         const result = compact(array)
         expect(result).toEqual([1,2,3,4]);
@@ -47,7 +47,7 @@ describe("compact tests", () =>{
         const array = [true,1,2,3,4];
         const result = compact(array)
         expect(result).toEqual([true,1,2,3,4]);
-    }); */
+    });
 
     it('remove all and return empty list', () => {
         const array = [NaN,0,null,undefined,"", false];
