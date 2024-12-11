@@ -53,6 +53,6 @@ describe("compact tests", () =>{
     it('remove all and return empty list', () => {
         const array = [NaN,0,null,undefined,"", false];
         const result = compact(array)
-        expect(result).toEqual([1,2,3,4]);
+        expect(result).toEqual([]);
     });
 });
