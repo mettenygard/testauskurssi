@@ -1,30 +1,61 @@
+import baseToNumber from '../src/.internal/baseToNumber.js';
+import baseToString from '../src/.internal/baseToString.js';
 import add from '../src/add.js';
 
 describe("add tests", () =>{
-    it('should add two positive numbers', () =>
-    { 
+    it('Basic cases', () =>
+    {
+        // positive integers
         expect(add(1,1)).toBe(2);
         expect(add(2,5)).toBe(7);
-        expect(add(3,6)).toBe(9); 
-    });
-    it('should add two negative numbers', () =>
-    { 
+        // negative integers
         expect(add(-1,-1)).toBe(-2);
         expect(add(-2,-5)).toBe(-7);
-        expect(add(-3,-6)).toBe(-9); 
-    });
-    it('should add negative and positive number', () =>
-    { 
+        // positive and negative integers
         expect(add(-1,1)).toBe(0);
         expect(add(7,-5)).toBe(2);
-        expect(add(-3,6)).toBe(3); 
-    });
-    it('should add zero', () =>
-    { 
+        // zeros
         expect(add(0,0)).toBe(0);
         expect(add(0,7)).toBe(7);
         expect(add(6,0)).toBe(6);
         expect(add(-6,0)).toBe(-6); 
-        expect(add(0,-6)).toBe(-6);  
+        expect(add(0,-6)).toBe(-6); 
+        // floats
+        expect(add(2.5,5.5)).toBe(8);
+        expect(add(-2.5,5.5)).toBe(3);
+        expect(add(-2.5,0)).toBe(-2.5);
+        expect(add(0,5.5)).toBe(5.5);
+    });
+
+    it('Not a Number cases', () =>
+    {
+        expect(add(NaN,1)).toBe(NaN);
+        expect(add(undefined,1)).toBe(1);
+        expect(add( null,1)).toBe(1);
+    });
+
+    it('baseToNumber cases', () =>
+    {
+        expect(baseToNumber(42)).toBe(42);
+
+        const symbol = Symbol('word')
+        expect(baseToNumber(symbol)).toBeNaN();
+        expect(baseToNumber("42")).toBe(42);
+        expect(baseToNumber(undefined)).toBeNaN();
+        expect(baseToNumber(null)).toBe(0);
+        expect(baseToNumber(true)).toBe(1);
+        expect(baseToNumber(false)).toBe(0);
+    });
+
+    it('baseToString cases', () =>
+    {
+        expect(baseToString("string")).toBe("string");
+        expect(baseToString("42")).toBe("42");
+        expect(baseToString(42)).toBe("42");
+        expect(baseToString(-42)).toBe("-42");
+        expect(baseToString(undefined)).toBe('undefined');
+        expect(baseToString(null)).toBe('null');
+        expect(baseToString(true)).toBe('true');
+        expect(baseToString(false)).toBe('false');
     });
 });

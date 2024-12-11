@@ -20,7 +20,7 @@ jobs:
 
     - name: Run tests and collect coverage
       run: |
-        npm run test-coverage  # Runs the test coverage using npm and c8
+        npm run test-coverage  # Runs tests with c8 and collects coverage
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
 
@@ -32,6 +32,6 @@ jobs:
     - name: Upload coverage to Coveralls
       uses: coverallsapp/github-action@v2
       with:
-        path-to-lcov: ./coverage/lcov.info  # Specify the location of the coverage report
+        path-to-lcov: ./coverage/lcov.info
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
